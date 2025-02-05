@@ -1,0 +1,44 @@
+﻿{
+  "Fonts": [
+    {
+      "Name": "SuseRegular10",
+      "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
+      "Size": 10
+    },
+    {
+      "Name": "SuseRegular12",
+      "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
+      "Size": 12
+    },
+    {
+      "Name": "SuseRegular14",
+      "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
+      "Size": 14
+    },
+    {
+      "Name": "SuseRegular16",
+      "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
+      "Size": 16
+    },
+    {
+      "Name": "SuseBold16",
+      "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
+      "Size": 16
+    },
+    {
+      "Name": "SuseBold14",
+      "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
+      "Size": 14
+    },
+    {
+      "Name": "SuseBold12",
+      "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
+      "Size": 12
+    },
+    {
+      "Name": "SuseBold10",
+      "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
+      "Size": 10
+    }
+  ]
+}

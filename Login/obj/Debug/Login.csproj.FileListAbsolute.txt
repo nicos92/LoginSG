@@ -1,0 +1,15 @@
+d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\Login.exe
+d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\Login.pdb
+d:\Users\n.sandoval\Documents\csharp\Login\Login\obj\Debug\Login.csprojResolveAssemblyReference.cache
+d:\Users\n.sandoval\Documents\csharp\Login\Login\obj\Debug\Login.Form1.resources
+d:\Users\n.sandoval\Documents\csharp\Login\Login\obj\Debug\Login.Properties.Resources.resources
+d:\Users\n.sandoval\Documents\csharp\Login\Login\obj\Debug\Login.csproj.GenerateResource.Cache
+d:\Users\n.sandoval\Documents\csharp\Login\Login\obj\Debug\Login.exe
+d:\Users\n.sandoval\Documents\csharp\Login\Login\obj\Debug\Login.pdb
+d:\Users\n.sandoval\Documents\csharp\Login\Login\obj\Debug\Controles.NSTextBox.resources
+d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\Newtonsoft.Json.dll
+d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\Newtonsoft.Json.xml
+d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\Resources\SUSE-VariableFont_wght.ttf
+d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\App.config
+d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\fonts.json
+d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\Resources\Santa Giulia Logo.ico

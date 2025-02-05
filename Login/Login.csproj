@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fonts\CargaFuentes.cs" />
+    <Compile Include="Fonts\SingletonFont.cs" />
     <Compile Include="Varios\ColoresARGB.cs" />
     <Compile Include="Fonts\Fontconfig.cs" />
     <Compile Include="Fonts\FontSettings.cs" />

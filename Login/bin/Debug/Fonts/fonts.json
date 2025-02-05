@@ -1,6 +1,12 @@
 ﻿{
   "Fonts": [
     {
+      "Name": "Suse_8_Regular",
+      "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
+      "Size": 8,
+      "Weight": "Regular"
+    },
+    {
       "Name": "Suse_10_Regular",
       "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
       "Size": 10,
@@ -46,6 +52,12 @@
       "Name": "Suse_10_Bold",
       "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
       "Size": 10,
+      "Weight": "Bold"
+    },
+    {
+      "Name": "Suse_8_Bold",
+      "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
+      "Size": 8,
       "Weight": "Bold"
     }
   ]

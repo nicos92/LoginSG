@@ -28,12 +28,14 @@ namespace Login
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            CargaFuentes cargaF = new CargaFuentes();
-            cargaF.LoadFontsFromConfig();
+            
 
+            SingletonFont cargaF = SingletonFont.GetInstancia();
+            cargaF.LoadFontsFromConfig();
+            
             ApplyFontsToControls(cargaF);
         }
-        private void ApplyFontsToControls(CargaFuentes cargaF)
+        private void ApplyFontsToControls(SingletonFont cargaF)
         {
 
             LblUsuario.Font = cargaF.FontCollection["Suse_16_Bold"];

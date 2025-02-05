@@ -31,9 +31,9 @@
             this.TableLayoutMain = new System.Windows.Forms.TableLayoutPanel();
             this.PicBox = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.TxtPassword = new Controles.NSTextBox();
             this.LblUsuario = new System.Windows.Forms.Label();
             this.LblPassword = new System.Windows.Forms.Label();
-            this.TxtPassword = new Controles.NSTextBox();
             this.TxtUsuario = new Controles.NSTextBox();
             this.BtnIniciar = new Controles.NSButton();
             this.TableLayoutMain.SuspendLayout();
@@ -50,7 +50,7 @@
             this.TableLayoutMain.Controls.Add(this.tableLayoutPanel1, 1, 0);
             this.TableLayoutMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TableLayoutMain.Location = new System.Drawing.Point(0, 0);
-            this.TableLayoutMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TableLayoutMain.Margin = new System.Windows.Forms.Padding(4);
             this.TableLayoutMain.Name = "TableLayoutMain";
             this.TableLayoutMain.RowCount = 1;
             this.TableLayoutMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -62,7 +62,7 @@
             this.PicBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PicBox.Image = global::Login.Properties.Resources.Santa_Giulia_Logo;
             this.PicBox.Location = new System.Drawing.Point(92, 93);
-            this.PicBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PicBox.Margin = new System.Windows.Forms.Padding(4);
             this.PicBox.Name = "PicBox";
             this.PicBox.Size = new System.Drawing.Size(205, 170);
             this.PicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -91,30 +91,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(354, 319);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // LblUsuario
-            // 
-            this.LblUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.LblUsuario.AutoSize = true;
-            this.LblUsuario.Font = new System.Drawing.Font("SUSE", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUsuario.Location = new System.Drawing.Point(36, 38);
-            this.LblUsuario.Margin = new System.Windows.Forms.Padding(36, 0, 4, 0);
-            this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(84, 25);
-            this.LblUsuario.TabIndex = 0;
-            this.LblUsuario.Text = "Usuario";
-            // 
-            // LblPassword
-            // 
-            this.LblPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.LblPassword.AutoSize = true;
-            this.LblPassword.Font = new System.Drawing.Font("SUSE", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPassword.Location = new System.Drawing.Point(36, 164);
-            this.LblPassword.Margin = new System.Windows.Forms.Padding(36, 0, 4, 0);
-            this.LblPassword.Name = "LblPassword";
-            this.LblPassword.Size = new System.Drawing.Size(120, 25);
-            this.LblPassword.TabIndex = 1;
-            this.LblPassword.Text = "Contraseña";
-            // 
             // TxtPassword
             // 
             this.TxtPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -122,7 +98,7 @@
             this.TxtPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TxtPassword.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
             this.TxtPassword.BorderSize = 2;
-            this.TxtPassword.Font = new System.Drawing.Font("SUSE", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPassword.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtPassword.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.TxtPassword.Location = new System.Drawing.Point(40, 194);
             this.TxtPassword.Margin = new System.Windows.Forms.Padding(5);
@@ -134,6 +110,30 @@
             this.TxtPassword.TabIndex = 2;
             this.TxtPassword.UnderLinesStyle = false;
             // 
+            // LblUsuario
+            // 
+            this.LblUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LblUsuario.AutoSize = true;
+            this.LblUsuario.Font = new System.Drawing.Font("Sylfaen", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUsuario.Location = new System.Drawing.Point(36, 36);
+            this.LblUsuario.Margin = new System.Windows.Forms.Padding(36, 0, 4, 0);
+            this.LblUsuario.Name = "LblUsuario";
+            this.LblUsuario.Size = new System.Drawing.Size(89, 27);
+            this.LblUsuario.TabIndex = 0;
+            this.LblUsuario.Text = "Usuario";
+            // 
+            // LblPassword
+            // 
+            this.LblPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LblPassword.AutoSize = true;
+            this.LblPassword.Font = new System.Drawing.Font("Sylfaen", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPassword.Location = new System.Drawing.Point(36, 162);
+            this.LblPassword.Margin = new System.Windows.Forms.Padding(36, 0, 4, 0);
+            this.LblPassword.Name = "LblPassword";
+            this.LblPassword.Size = new System.Drawing.Size(124, 27);
+            this.LblPassword.TabIndex = 1;
+            this.LblPassword.Text = "Contraseña";
+            // 
             // TxtUsuario
             // 
             this.TxtUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -141,7 +141,7 @@
             this.TxtUsuario.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TxtUsuario.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
             this.TxtUsuario.BorderSize = 2;
-            this.TxtUsuario.Font = new System.Drawing.Font("SUSE", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtUsuario.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.TxtUsuario.Location = new System.Drawing.Point(40, 68);
             this.TxtUsuario.Margin = new System.Windows.Forms.Padding(5);
@@ -163,7 +163,7 @@
             this.BtnIniciar.BorderSize = 0;
             this.BtnIniciar.FlatAppearance.BorderSize = 0;
             this.BtnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnIniciar.Font = new System.Drawing.Font("SUSE", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnIniciar.Font = new System.Drawing.Font("Sylfaen", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnIniciar.ForeColor = System.Drawing.Color.White;
             this.BtnIniciar.Location = new System.Drawing.Point(64, 261);
             this.BtnIniciar.Margin = new System.Windows.Forms.Padding(4);
@@ -185,7 +185,7 @@
             this.Font = new System.Drawing.Font("SUSE", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";

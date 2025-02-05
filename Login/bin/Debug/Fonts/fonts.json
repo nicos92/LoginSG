@@ -1,0 +1,52 @@
+﻿{
+  "Fonts": [
+    {
+      "Name": "Suse_10_Regular",
+      "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
+      "Size": 10,
+      "Weight": "Regular"
+    },
+    {
+      "Name": "Suse_12_Regular",
+      "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
+      "Size": 12,
+      "Weight": "Regular"
+    },
+    {
+      "Name": "Suse_14_Regular",
+      "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
+      "Size": 14,
+      "Weight": "Regular"
+    },
+    {
+      "Name": "Suse_16_Regular",
+      "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
+      "Size": 16,
+      "Weight": "Regular"
+    },
+    {
+      "Name": "Suse_16_Bold",
+      "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
+      "Size": 16,
+      "Weight": "Bold"
+    },
+    {
+      "Name": "Suse_14_Bold",
+      "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
+      "Size": 14,
+      "Weight": "Bold"
+    },
+    {
+      "Name": "Suse_12_Bold",
+      "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
+      "Size": 12,
+      "Weight": "Bold"
+    },
+    {
+      "Name": "Suse_10_Bold",
+      "ResourceName": "Login.Resources.SUSE-VariableFont_wght.ttf",
+      "Size": 10,
+      "Weight": "Bold"
+    }
+  ]
+}

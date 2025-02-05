@@ -13,3 +13,18 @@ d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\Resources\SUSE-Variab
 d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\App.config
 d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\fonts.json
 d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\Resources\Santa Giulia Logo.ico
+C:\Users\nicos92\Documents\csharp\LoginSG\Login\obj\Debug\Login.exe
+C:\Users\nicos92\Documents\csharp\LoginSG\Login\obj\Debug\Login.pdb
+C:\Users\nicos92\Documents\csharp\LoginSG\Login\bin\Debug\Resources\SUSE-VariableFont_wght.ttf
+C:\Users\nicos92\Documents\csharp\LoginSG\Login\bin\Debug\App.config
+C:\Users\nicos92\Documents\csharp\LoginSG\Login\bin\Debug\Resources\Santa Giulia Logo.ico
+C:\Users\nicos92\Documents\csharp\LoginSG\Login\bin\Debug\Login.exe
+C:\Users\nicos92\Documents\csharp\LoginSG\Login\bin\Debug\Login.pdb
+C:\Users\nicos92\Documents\csharp\LoginSG\Login\bin\Debug\Newtonsoft.Json.dll
+C:\Users\nicos92\Documents\csharp\LoginSG\Login\bin\Debug\Newtonsoft.Json.xml
+C:\Users\nicos92\Documents\csharp\LoginSG\Login\obj\Debug\Login.csprojResolveAssemblyReference.cache
+C:\Users\nicos92\Documents\csharp\LoginSG\Login\obj\Debug\Login.Form1.resources
+C:\Users\nicos92\Documents\csharp\LoginSG\Login\obj\Debug\Controles.NSTextBox.resources
+C:\Users\nicos92\Documents\csharp\LoginSG\Login\obj\Debug\Login.Properties.Resources.resources
+C:\Users\nicos92\Documents\csharp\LoginSG\Login\obj\Debug\Login.csproj.GenerateResource.Cache
+C:\Users\nicos92\Documents\csharp\LoginSG\Login\bin\Debug\Fonts\fonts.json

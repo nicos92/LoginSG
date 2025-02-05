@@ -50,7 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColoresARGB.cs" />
+    <Compile Include="Fonts\CargaFuentes.cs" />
+    <Compile Include="Varios\ColoresARGB.cs" />
     <Compile Include="Fonts\Fontconfig.cs" />
     <Compile Include="Fonts\FontSettings.cs" />
     <Compile Include="Form1.cs">
@@ -59,13 +60,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="NSButton.cs">
+    <Compile Include="Varios\NSButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="NSTextBox.cs">
+    <Compile Include="Varios\NSTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="NSTextBox.designer.cs">
+    <Compile Include="Varios\NSTextBox.designer.cs">
       <DependentUpon>NSTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -73,7 +74,7 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NSTextBox.resx">
+    <EmbeddedResource Include="Varios\NSTextBox.resx">
       <DependentUpon>NSTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -86,7 +87,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="fonts.json">
+    <EmbeddedResource Include="Fonts\fonts.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="packages.config" />

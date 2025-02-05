@@ -18,74 +18,38 @@ namespace Login
 {
     public partial class Form1 : Form
     {
-        private Dictionary<string, Font> _fontCollection = new Dictionary<string, Font>();
         public Form1()
         {
             InitializeComponent();
-            LoadFontsFromConfig();
-            ApplyFontsToControls();
+
         }
 
-        
 
-        private void LoadFontsFromConfig()
+
+        private void Form1_Load(object sender, EventArgs e)
         {
-            //Properties.Resources.SUSE_VariableFont_wght.ttf
-            // Lee el archivo de configuración
-            string configFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "fonts.json");
-            if (!File.Exists(configFilePath))
-            {
-                MessageBox.Show("El archivo de configuración de fuentes no existe.");
-                return;
-            }
+            CargaFuentes cargaF = new CargaFuentes();
+            cargaF.LoadFontsFromConfig();
 
-            string json = File.ReadAllText(configFilePath);
-            var fontSettings = JsonConvert.DeserializeObject<FontSettings>(json);
+            ApplyFontsToControls(cargaF);
+        }
+        private void ApplyFontsToControls(CargaFuentes cargaF)
+        {
 
-            // Carga cada fuente desde los recursos incrustados
-            foreach (var fontConfig in fontSettings.Fonts)
-            {
-                var font = LoadFontFromResource(fontConfig.ResourceName, fontConfig.Size);
-                if (font != null)
-                {
-                    _fontCollection[fontConfig.Name] = (Font) font;
-                }
-            }
+            LblUsuario.Font = cargaF.FontCollection["Suse_16_Bold"];
+            TxtUsuario.Font = cargaF.FontCollection["Suse_12_Regular"];
+            LblPassword.Font = cargaF.FontCollection["Suse_16_Bold"];
+            TxtPassword.Font = cargaF.FontCollection["Suse_12_Regular"];
+
+            BtnIniciar.Font = cargaF.FontCollection["Suse_14_Bold"];
+
         }
 
-        private object LoadFontFromResource(string fontResourceName, float size)
+        private void BtnIniciar_Click(object sender, EventArgs e)
         {
-            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-
-            using (var stream = assembly.GetManifestResourceStream(fontResourceName))
-            {
-                if (stream == null)
-                {
-                    MessageBox.Show($"No se pudo cargar la fuente: {fontResourceName}");
-                    return null;
-                }
-
-                byte[] fontData = new byte[stream.Length];
-                stream.Read(fontData, 0, (int)stream.Length);
-
-                IntPtr fontPtr = Marshal.AllocCoTaskMem(fontData.Length);
-                Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
-
-                PrivateFontCollection privateFonts = new PrivateFontCollection();
-                privateFonts.AddMemoryFont(fontPtr, fontData.Length);
-
-                Marshal.FreeCoTaskMem(fontPtr);
-
-                return new Font(privateFonts.Families[0], size);
-            }
-        }
-
-        private void ApplyFontsToControls()
-        {
-            LblUsuario.Font = _fontCollection["SuseBold16"];
-            LblPassword.Font = _fontCollection["SuseBold16"];
-            BtnIniciar.Font = _fontCollection["SuseRegular14"];
-
+            TxtPassword.Text = "";
+            TxtUsuario.Text = "";
+            TxtUsuario.Focus();
         }
     }
 }

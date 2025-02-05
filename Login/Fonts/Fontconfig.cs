@@ -11,6 +11,7 @@ namespace Login.Fonts
         public string Name { get; set; }
         public string ResourceName { get; set; }
         public float Size { get; set; }
+        public string Weight { get; set; }
     }
 
     

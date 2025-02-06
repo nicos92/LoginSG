@@ -31,7 +31,7 @@ namespace Login
             
 
             SingletonFont cargaF = SingletonFont.GetInstancia();
-            cargaF.LoadFontsFromConfig();
+            
             
             ApplyFontsToControls(cargaF);
         }

@@ -21,6 +21,14 @@ namespace Login.Fonts
 
 
         private Dictionary<string, Font> MiFontCollection = new Dictionary<string, Font>();
+        private Dictionary<string, FontStyle> MisFontStyle = new Dictionary<string, FontStyle>
+        {
+            {"Regular", FontStyle.Regular },
+            {"Bold", FontStyle.Bold },
+            {"Italic", FontStyle.Italic },
+            {"Stikeout", FontStyle.Strikeout },
+            {"Underline", FontStyle.Underline }
+        };
 
 
         public static SingletonFont GetInstancia()
@@ -32,6 +40,7 @@ namespace Login.Fonts
                     if (Instancia == null)
                     {
                         Instancia = new SingletonFont();
+                        Instancia.LoadFontsFromConfig();
                     }
                 }
             }
@@ -46,13 +55,10 @@ namespace Login.Fonts
                 return MiFontCollection;
             }
 
-            set
-            {
-                MiFontCollection = value;
-            }
+            
         }
 
-        public void LoadFontsFromConfig()
+        private void LoadFontsFromConfig()
         {
             //Properties.Resources.SUSE_VariableFont_wght.ttf
             // Lee el archivo de configuración
@@ -100,25 +106,11 @@ namespace Login.Fonts
 
                 Marshal.FreeCoTaskMem(fontPtr);
 
-                return new Font(privateFonts.Families[0], size, GetMiFontStyle(weight));
+                return new Font(privateFonts.Families[0], size, MisFontStyle[weight]);
             }
         }
 
-        private FontStyle GetMiFontStyle(string weight)
-        {
-            if (weight == "Bold")
-            {
-                return FontStyle.Bold;
-            }
-
-            if (weight == "Regular")
-            {
-                return FontStyle.Regular;
-            }
-            return FontStyle.Regular;
-
-
-        }
+        
 
     }
 }

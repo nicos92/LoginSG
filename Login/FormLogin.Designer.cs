@@ -31,19 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.TableLayoutMain = new System.Windows.Forms.TableLayoutPanel();
+            this.PicBox = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.LblUsuario = new System.Windows.Forms.Label();
-            this.LblPassword = new System.Windows.Forms.Label();
-            this.VerificacionUsuarioCont = new System.Windows.Forms.ErrorProvider(this.components);
-            this.PicBox = new System.Windows.Forms.PictureBox();
             this.TxtUsuario = new Controles.NSTextBox();
             this.BtnIniciar = new Controles.NSButton();
             this.TxtPassword = new Controles.NSTextBox();
+            this.LblPassword = new System.Windows.Forms.Label();
             this.RBtnRecordarUsuario = new Controles.NSRadioButton();
+            this.VerificacionUsuarioCont = new System.Windows.Forms.ErrorProvider(this.components);
             this.TableLayoutMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBox)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.VerificacionUsuarioCont)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // TableLayoutMain
@@ -61,6 +61,18 @@
             this.TableLayoutMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.TableLayoutMain.Size = new System.Drawing.Size(780, 357);
             this.TableLayoutMain.TabIndex = 0;
+            // 
+            // PicBox
+            // 
+            this.PicBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PicBox.Image = global::Login.Properties.Resources.Santa_Giulia_Logo;
+            this.PicBox.Location = new System.Drawing.Point(92, 93);
+            this.PicBox.Margin = new System.Windows.Forms.Padding(4);
+            this.PicBox.Name = "PicBox";
+            this.PicBox.Size = new System.Drawing.Size(205, 170);
+            this.PicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PicBox.TabIndex = 0;
+            this.PicBox.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
@@ -97,35 +109,6 @@
             this.LblUsuario.Size = new System.Drawing.Size(84, 25);
             this.LblUsuario.TabIndex = 0;
             this.LblUsuario.Text = "Usuario";
-            // 
-            // LblPassword
-            // 
-            this.LblPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.LblPassword.AutoSize = true;
-            this.LblPassword.Font = new System.Drawing.Font("SUSE", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPassword.Location = new System.Drawing.Point(36, 161);
-            this.LblPassword.Margin = new System.Windows.Forms.Padding(36, 0, 4, 0);
-            this.LblPassword.Name = "LblPassword";
-            this.LblPassword.Size = new System.Drawing.Size(120, 25);
-            this.LblPassword.TabIndex = 1;
-            this.LblPassword.Text = "Contraseña";
-            // 
-            // VerificacionUsuarioCont
-            // 
-            this.VerificacionUsuarioCont.ContainerControl = this;
-            this.VerificacionUsuarioCont.Icon = ((System.Drawing.Icon)(resources.GetObject("VerificacionUsuarioCont.Icon")));
-            // 
-            // PicBox
-            // 
-            this.PicBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PicBox.Image = global::Login.Properties.Resources.Santa_Giulia_Logo;
-            this.PicBox.Location = new System.Drawing.Point(92, 93);
-            this.PicBox.Margin = new System.Windows.Forms.Padding(4);
-            this.PicBox.Name = "PicBox";
-            this.PicBox.Size = new System.Drawing.Size(205, 170);
-            this.PicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PicBox.TabIndex = 0;
-            this.PicBox.TabStop = false;
             // 
             // TxtUsuario
             // 
@@ -191,6 +174,18 @@
             this.TxtPassword.UnderLinesStyle = false;
             this.TxtPassword._TextChanged += new System.EventHandler(this.TxtPassword__TextChanged);
             // 
+            // LblPassword
+            // 
+            this.LblPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LblPassword.AutoSize = true;
+            this.LblPassword.Font = new System.Drawing.Font("SUSE", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPassword.Location = new System.Drawing.Point(36, 161);
+            this.LblPassword.Margin = new System.Windows.Forms.Padding(36, 0, 4, 0);
+            this.LblPassword.Name = "LblPassword";
+            this.LblPassword.Size = new System.Drawing.Size(120, 25);
+            this.LblPassword.TabIndex = 1;
+            this.LblPassword.Text = "Contraseña";
+            // 
             // RBtnRecordarUsuario
             // 
             this.RBtnRecordarUsuario.AutoSize = true;
@@ -205,6 +200,11 @@
             this.RBtnRecordarUsuario.Text = "Recordar Usuario";
             this.RBtnRecordarUsuario.UncheckedColor1 = System.Drawing.Color.DimGray;
             this.RBtnRecordarUsuario.UseVisualStyleBackColor = true;
+            // 
+            // VerificacionUsuarioCont
+            // 
+            this.VerificacionUsuarioCont.ContainerControl = this;
+            this.VerificacionUsuarioCont.Icon = ((System.Drawing.Icon)(resources.GetObject("VerificacionUsuarioCont.Icon")));
             // 
             // FormLogin
             // 
@@ -223,10 +223,10 @@
             this.Text = "NicoS92 Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.TableLayoutMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PicBox)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.VerificacionUsuarioCont)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBox)).EndInit();
             this.ResumeLayout(false);
 
         }

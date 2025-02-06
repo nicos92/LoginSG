@@ -28,3 +28,13 @@ C:\Users\nicos92\Documents\csharp\LoginSG\Login\obj\Debug\Login.csproj.GenerateR
 C:\Users\nicos92\Documents\csharp\LoginSG\Login\bin\Debug\Fonts\fonts.json
 d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\Fonts\fonts.json
 d:\Users\n.sandoval\Documents\csharp\Login\Login\obj\Debug\Login.FormLogin.resources
+d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\Resources\check32.png
+d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\Resources\cross32.png
+d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\Resources\info32.png
+d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\Resources\question32.png
+d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\Resources\warning32.png
+d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\Resources\check32.ico
+d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\Resources\cross32.ico
+d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\Resources\info32.ico
+d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\Resources\question32.ico
+d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\Resources\warning32.ico

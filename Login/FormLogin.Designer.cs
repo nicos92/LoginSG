@@ -28,19 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.TableLayoutMain = new System.Windows.Forms.TableLayoutPanel();
-            this.PicBox = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.LblUsuario = new System.Windows.Forms.Label();
             this.LblPassword = new System.Windows.Forms.Label();
+            this.VerificacionUsuarioCont = new System.Windows.Forms.ErrorProvider(this.components);
+            this.PicBox = new System.Windows.Forms.PictureBox();
             this.TxtUsuario = new Controles.NSTextBox();
             this.BtnIniciar = new Controles.NSButton();
             this.TxtPassword = new Controles.NSTextBox();
             this.RBtnRecordarUsuario = new Controles.NSRadioButton();
             this.TableLayoutMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBox)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VerificacionUsuarioCont)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // TableLayoutMain
@@ -58,18 +61,6 @@
             this.TableLayoutMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.TableLayoutMain.Size = new System.Drawing.Size(780, 357);
             this.TableLayoutMain.TabIndex = 0;
-            // 
-            // PicBox
-            // 
-            this.PicBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PicBox.Image = global::Login.Properties.Resources.Santa_Giulia_Logo;
-            this.PicBox.Location = new System.Drawing.Point(92, 93);
-            this.PicBox.Margin = new System.Windows.Forms.Padding(4);
-            this.PicBox.Name = "PicBox";
-            this.PicBox.Size = new System.Drawing.Size(205, 170);
-            this.PicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PicBox.TabIndex = 0;
-            this.PicBox.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
@@ -119,6 +110,23 @@
             this.LblPassword.TabIndex = 1;
             this.LblPassword.Text = "Contraseña";
             // 
+            // VerificacionUsuarioCont
+            // 
+            this.VerificacionUsuarioCont.ContainerControl = this;
+            this.VerificacionUsuarioCont.Icon = ((System.Drawing.Icon)(resources.GetObject("VerificacionUsuarioCont.Icon")));
+            // 
+            // PicBox
+            // 
+            this.PicBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PicBox.Image = global::Login.Properties.Resources.Santa_Giulia_Logo;
+            this.PicBox.Location = new System.Drawing.Point(92, 93);
+            this.PicBox.Margin = new System.Windows.Forms.Padding(4);
+            this.PicBox.Name = "PicBox";
+            this.PicBox.Size = new System.Drawing.Size(205, 170);
+            this.PicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PicBox.TabIndex = 0;
+            this.PicBox.TabStop = false;
+            // 
             // TxtUsuario
             // 
             this.TxtUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -137,15 +145,17 @@
             this.TxtUsuario.Size = new System.Drawing.Size(273, 36);
             this.TxtUsuario.TabIndex = 1;
             this.TxtUsuario.UnderLinesStyle = false;
+            this.TxtUsuario._TextChanged += new System.EventHandler(this.TxtUsuario__TextChanged);
             // 
             // BtnIniciar
             // 
             this.BtnIniciar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnIniciar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            this.BtnIniciar.BackGroudColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            this.BtnIniciar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.BtnIniciar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.BtnIniciar.BackGroudColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.BtnIniciar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.BtnIniciar.BorderRadius = 12;
-            this.BtnIniciar.BorderSize = 0;
+            this.BtnIniciar.BorderSize = 2;
+            this.BtnIniciar.Enabled = false;
             this.BtnIniciar.FlatAppearance.BorderSize = 0;
             this.BtnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnIniciar.Font = new System.Drawing.Font("SUSE", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -158,6 +168,7 @@
             this.BtnIniciar.Text = "Iniciar Sesion";
             this.BtnIniciar.TextColor = System.Drawing.Color.White;
             this.BtnIniciar.UseVisualStyleBackColor = false;
+            this.BtnIniciar.EnabledChanged += new System.EventHandler(this.BtnIniciar_EnabledChanged);
             this.BtnIniciar.Click += new System.EventHandler(this.BtnIniciar_Click);
             // 
             // TxtPassword
@@ -178,6 +189,7 @@
             this.TxtPassword.Size = new System.Drawing.Size(273, 36);
             this.TxtPassword.TabIndex = 3;
             this.TxtPassword.UnderLinesStyle = false;
+            this.TxtPassword._TextChanged += new System.EventHandler(this.TxtPassword__TextChanged);
             // 
             // RBtnRecordarUsuario
             // 
@@ -211,9 +223,10 @@
             this.Text = "NicoS92 Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.TableLayoutMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PicBox)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VerificacionUsuarioCont)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,6 +242,7 @@
         private Controles.NSTextBox TxtPassword;
         private Controles.NSButton BtnIniciar;
         private Controles.NSRadioButton RBtnRecordarUsuario;
+        private System.Windows.Forms.ErrorProvider VerificacionUsuarioCont;
     }
 }
 

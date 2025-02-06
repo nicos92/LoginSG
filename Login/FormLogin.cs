@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Newtonsoft.Json;
+using Guia_5;
 
 namespace Login
 {
@@ -64,7 +65,7 @@ namespace Login
             GuardarUltimoUsuario();
             TxtPassword.Text = "";
             TxtUsuario.Text = "";
-            
+            TxtUsuario.Focus();
 
         }
 
@@ -77,6 +78,35 @@ namespace Login
                 Properties.Settings.Default.Save();
 
             }
+
+        }
+
+        private void EnabledBtnIniciar()
+        {
+            BtnIniciar.Enabled = TxtUsuario.Text != "" && TxtPassword.Text != "";
+        }
+
+        private void BtnIniciar_EnabledChanged(object sender, EventArgs e)
+        {
+            if (BtnIniciar.Enabled)
+            {
+                BtnIniciar.BackGroudColor = new ColoresARGB().Primary;
+            }
+            else
+            {
+                BtnIniciar.BackGroudColor = new ColoresARGB().Secondary;
+
+            }
+        }
+
+        private void TxtUsuario__TextChanged(object sender, EventArgs e)
+        {
+            EnabledBtnIniciar();
+        }
+
+        private void TxtPassword__TextChanged(object sender, EventArgs e)
+        {
+            EnabledBtnIniciar();
 
         }
     }

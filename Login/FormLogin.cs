@@ -16,9 +16,9 @@ using Newtonsoft.Json;
 
 namespace Login
 {
-    public partial class Form1 : Form
+    public partial class FormLogin : Form
     {
-        public Form1()
+        public FormLogin()
         {
             InitializeComponent();
 
@@ -28,13 +28,25 @@ namespace Login
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
 
             SingletonFont cargaF = SingletonFont.GetInstancia();
-            
-            
+
+
             ApplyFontsToControls(cargaF);
+            CargarUltimoUsuario();
+
         }
+
+        private void CargarUltimoUsuario()
+        {
+            if (Properties.Settings.Default.Usuario != "")
+            {
+                TxtUsuario.Text = Properties.Settings.Default.Usuario;
+                RBtnRecordarUsuario.Checked = true;
+            }
+        }
+
         private void ApplyFontsToControls(SingletonFont cargaF)
         {
 
@@ -49,9 +61,23 @@ namespace Login
 
         private void BtnIniciar_Click(object sender, EventArgs e)
         {
+            GuardarUltimoUsuario();
             TxtPassword.Text = "";
             TxtUsuario.Text = "";
-            TxtUsuario.Focus();
+            
+
+        }
+
+        private void GuardarUltimoUsuario()
+        {
+
+            if (RBtnRecordarUsuario.Checked)
+            {
+                Properties.Settings.Default.Usuario = TxtUsuario.Text;
+                Properties.Settings.Default.Save();
+
+            }
+
         }
     }
 }

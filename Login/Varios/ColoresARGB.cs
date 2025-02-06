@@ -16,7 +16,7 @@ namespace Guia_5
         private readonly Color warning = Color.FromArgb(255, 255, 193, 7);
         private readonly Color danger = Color.FromArgb(255, 220, 53, 69);
         private readonly Color light = Color.FromArgb(255, 248, 249, 250);
-        private readonly Color dark = Color.FromArgb(255, 32, 37, 41);
+        private readonly Color dark = Color.FromArgb(255, 32, 37, 42);
         private readonly Color darkBackText = Color.FromArgb(255, 26, 31, 34);
 
         private readonly Color white = Color.FromArgb(255, 254, 254, 254);

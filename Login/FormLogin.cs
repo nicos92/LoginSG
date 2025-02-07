@@ -66,6 +66,7 @@ namespace Login
         private async void BtnIniciar_Click(object sender, EventArgs e)
         {
             GuardarUltimoUsuario();
+            // verificar conexion timeout exception
             bool login = await usuarioModel.LoginUser(TxtUsuario.Text, TxtPassword.Text);
 
             if (login)
@@ -77,6 +78,8 @@ namespace Login
             {
                 TxtPassword.Text = "";
                 TxtUsuario.Focus();
+                LblIcoError.Visible = true;
+                LblErrorUserPass.Visible = true;
             }
 
         }

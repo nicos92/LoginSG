@@ -59,3 +59,4 @@ d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\System.Threading.Task
 d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\System.Memory.xml
 d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 d:\Users\n.sandoval\Documents\csharp\Login\Login\bin\Debug\System.Buffers.xml
+d:\Users\n.sandoval\Documents\csharp\Login\Login\obj\Debug\Login.VentanaPrincipal.resources

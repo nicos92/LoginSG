@@ -51,8 +51,18 @@ namespace DataAccess
         {
             get
             {
-                if (_connection.State != System.Data.ConnectionState.Open)
-                    _connection.Open();
+                try
+                {
+
+                    if (_connection.State != System.Data.ConnectionState.Open)
+                        _connection.Open();
+
+                }catch(NpgsqlException e)
+                {
+                    NSMessageBox.NSMessageBox mensaje = new NSMessageBox.NSMessageBox();
+                    mensaje.ShowDialog("Error al conectar con Base de Datos", e.Message, NSMessageBox.Iconos.Cross, NSMessageBox.Botones.Aceptar);
+                    return null;
+                }
 
                 return _connection;
             }

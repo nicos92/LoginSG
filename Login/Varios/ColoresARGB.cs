@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Guia_5
+namespace Login
 {
     public  class ColoresARGB
     {

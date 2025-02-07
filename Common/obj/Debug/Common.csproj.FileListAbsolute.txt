@@ -1,0 +1,7 @@
+d:\Users\n.sandoval\Documents\csharp\Login\Common\bin\Debug\Common.dll
+d:\Users\n.sandoval\Documents\csharp\Login\Common\bin\Debug\Common.pdb
+d:\Users\n.sandoval\Documents\csharp\Login\Common\bin\Debug\NSMessageBox.dll
+d:\Users\n.sandoval\Documents\csharp\Login\Common\bin\Debug\NSMessageBox.pdb
+d:\Users\n.sandoval\Documents\csharp\Login\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+d:\Users\n.sandoval\Documents\csharp\Login\Common\obj\Debug\Common.dll
+d:\Users\n.sandoval\Documents\csharp\Login\Common\obj\Debug\Common.pdb

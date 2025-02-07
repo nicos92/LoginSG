@@ -1,0 +1,17 @@
+CREATE TABLE public."Usuarios"
+(
+    id bigserial NOT NULL,
+    nombre character varying(20) NOT NULL,
+    apellido character varying(20) NOT NULL,
+    legajo bigint NOT NULL,
+    sector character varying(20) NOT NULL,
+    puesto character varying(20) NOT NULL,
+    contra character varying(256) NOT NULL,
+    PRIMARY KEY (id),
+    CONSTRAINT "legajoUnique" UNIQUE (legajo)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."Usuarios"
+    OWNER to nicopostgres;

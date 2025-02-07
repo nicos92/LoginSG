@@ -11,14 +11,17 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Domain.Model;
+
 
 using Newtonsoft.Json;
-using Guia_5;
+using Common.Cache;
 
 namespace Login
 {
     public partial class FormLogin : Form
     {
+        UsuarioModel usuarioModel = new UsuarioModel();
         public FormLogin()
         {
             InitializeComponent();
@@ -60,12 +63,23 @@ namespace Login
 
         }
 
-        private void BtnIniciar_Click(object sender, EventArgs e)
+        private async void BtnIniciar_Click(object sender, EventArgs e)
         {
             GuardarUltimoUsuario();
-            TxtPassword.Text = "";
+            bool login = await usuarioModel.LoginUser(TxtUsuario.Text, TxtPassword.Text);
+
+            if (login)
+            {
+
             TxtUsuario.Text = "";
+            TxtPassword.Text = "";
             TxtUsuario.Focus();
+            }
+            else
+            {
+                TxtPassword.Text = "";
+                TxtUsuario.Focus();
+            }
 
         }
 

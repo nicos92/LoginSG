@@ -24,9 +24,10 @@ namespace DataAccess
                 using (NpgsqlCommand cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = await BDNpgsql.Instance.GetConnectionAsync();
-                    cmd.CommandText = "select id, nombre, apellido, legajo, sector, puesto, usuario from Usuarios where usuario = '@user' and contra = '@pass'";
+                    cmd.CommandText = "select id, nombre, apellido, legajo, sector, puesto, usuario from usuarios where usuario = @user and contra = @pass";
                     cmd.Parameters.AddWithValue("@user", user);
                     cmd.Parameters.AddWithValue("@pass", pass);
+                    
 
                     using (DbDataReader reader = await cmd.ExecuteReaderAsync())
                     {

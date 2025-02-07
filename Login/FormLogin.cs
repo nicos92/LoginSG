@@ -71,9 +71,7 @@ namespace Login
             if (login)
             {
 
-            TxtUsuario.Text = "";
-            TxtPassword.Text = "";
-            TxtUsuario.Focus();
+                this.Hide();
             }
             else
             {

@@ -22,6 +22,7 @@ namespace Login
     public partial class FormLogin : Form
     {
         UsuarioModel usuarioModel = new UsuarioModel();
+        ColoresARGB Colores = new ColoresARGB();
         public FormLogin()
         {
             InitializeComponent();
@@ -66,8 +67,32 @@ namespace Login
         private async void BtnIniciar_Click(object sender, EventArgs e)
         {
             GuardarUltimoUsuario();
+            DesactivarControles(false);
+            BtnIniciar.BackGroudColor = Colores.Secondary;
             // verificar conexion timeout exception
-            bool login = await usuarioModel.LoginUser(TxtUsuario.Text, TxtPassword.Text);
+            bool login = false;
+            try
+            {
+
+                login = await usuarioModel.LoginUser(TxtUsuario.Text, TxtPassword.Text);
+            }
+            catch (TimeoutException ex)
+            {
+                NSMessageBox.NSMessageBox mensaje = new NSMessageBox.NSMessageBox();
+                mensaje.ShowDialog("Error base de datos", "Paso demasiado tiempo para conectarse con la base de datos.\n" + ex.Message, NSMessageBox.Iconos.Cross, NSMessageBox.Botones.Aceptar);
+                return;
+
+            }catch(InvalidOperationException ex)
+            {
+                NSMessageBox.NSMessageBox mensaje = new NSMessageBox.NSMessageBox();
+                mensaje.ShowDialog("Error base de datos", "Ya hay una conexion abierta con laba se de datos.\n" + ex.Message, NSMessageBox.Iconos.Cross, NSMessageBox.Botones.Aceptar);
+                return;
+            }
+            finally
+            {
+                TxtPassword.Text = "";
+                TxtUsuario.Focus();
+            }
 
             if (login)
             {
@@ -76,12 +101,21 @@ namespace Login
             }
             else
             {
-                TxtPassword.Text = "";
-                TxtUsuario.Focus();
+                
                 LblIcoError.Visible = true;
                 LblErrorUserPass.Visible = true;
+                DesactivarControles(true);
+
+
+
             }
 
+        }
+        private void DesactivarControles(bool habilitacion)
+        {
+            BtnIniciar.Enabled = habilitacion;
+            TxtUsuario.Enabled = habilitacion;
+            TxtPassword.Enabled = habilitacion;
         }
 
         private void GuardarUltimoUsuario()

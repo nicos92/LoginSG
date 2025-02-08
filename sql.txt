@@ -1,4 +1,4 @@
-CREATE TABLE public."Usuarios"
+CREATE TABLE public."usuarios"
 (
     id bigserial NOT NULL,
     nombre character varying(20) NOT NULL,
@@ -7,8 +7,10 @@ CREATE TABLE public."Usuarios"
     sector character varying(20) NOT NULL,
     puesto character varying(20) NOT NULL,
     contra character varying(256) NOT NULL,
+    usuario character variying(20) NOT NULL,
     PRIMARY KEY (id),
-    CONSTRAINT "legajoUnique" UNIQUE (legajo)
+    CONSTRAINT "legajounique" UNIQUE (legajo),
+    CONSTRAINT "usuariounique" UNIQUE (usuario)
 )
 
 TABLESPACE pg_default;

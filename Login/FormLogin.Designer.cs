@@ -41,6 +41,9 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.LblErrorUserPass = new System.Windows.Forms.Label();
             this.VerificacionUsuarioCont = new System.Windows.Forms.ErrorProvider(this.components);
+            this.StatusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.BackWorkerProgressBar = new System.ComponentModel.BackgroundWorker();
             this.TxtUsuario = new Controles.NSTextBox();
             this.BtnIniciar = new Controles.NSButton();
             this.TxtPassword = new Controles.NSTextBox();
@@ -50,6 +53,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.VerificacionUsuarioCont)).BeginInit();
+            this.StatusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // TableLayoutMain
@@ -197,6 +201,30 @@
             this.VerificacionUsuarioCont.ContainerControl = this;
             this.VerificacionUsuarioCont.Icon = ((System.Drawing.Icon)(resources.GetObject("VerificacionUsuarioCont.Icon")));
             // 
+            // StatusStrip
+            // 
+            this.StatusStrip.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripProgressBar1});
+            this.StatusStrip.Location = new System.Drawing.Point(0, 435);
+            this.StatusStrip.Name = "StatusStrip";
+            this.StatusStrip.Size = new System.Drawing.Size(780, 22);
+            this.StatusStrip.TabIndex = 1;
+            this.StatusStrip.Text = "statusStrip1";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(700, 16);
+            // 
+            // BackWorkerProgressBar
+            // 
+            this.BackWorkerProgressBar.WorkerReportsProgress = true;
+            this.BackWorkerProgressBar.WorkerSupportsCancellation = true;
+            this.BackWorkerProgressBar.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackWorkerProgressBar_DoWork);
+            this.BackWorkerProgressBar.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackWorkerProgressBar_ProgressChanged);
+            this.BackWorkerProgressBar.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackWorkerProgressBar_RunWorkerCompleted);
+            // 
             // TxtUsuario
             // 
             this.TxtUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -216,6 +244,7 @@
             this.TxtUsuario.TabIndex = 1;
             this.TxtUsuario.UnderLinesStyle = false;
             this.TxtUsuario._TextChanged += new System.EventHandler(this.TxtUsuario__TextChanged);
+            this.TxtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtUsuario_KeyPress);
             // 
             // BtnIniciar
             // 
@@ -260,13 +289,14 @@
             this.TxtPassword.TabIndex = 3;
             this.TxtPassword.UnderLinesStyle = false;
             this.TxtPassword._TextChanged += new System.EventHandler(this.TxtPassword__TextChanged);
+            this.TxtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPassword_KeyPress);
             // 
             // RBtnRecordarUsuario
             // 
             this.RBtnRecordarUsuario.AutoSize = true;
             this.RBtnRecordarUsuario.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
-            this.RBtnRecordarUsuario.Location = new System.Drawing.Point(128, 140);
-            this.RBtnRecordarUsuario.Margin = new System.Windows.Forms.Padding(128, 8, 8, 16);
+            this.RBtnRecordarUsuario.Location = new System.Drawing.Point(96, 140);
+            this.RBtnRecordarUsuario.Margin = new System.Windows.Forms.Padding(96, 8, 8, 16);
             this.RBtnRecordarUsuario.MinimumSize = new System.Drawing.Size(0, 21);
             this.RBtnRecordarUsuario.Name = "RBtnRecordarUsuario";
             this.RBtnRecordarUsuario.Size = new System.Drawing.Size(161, 23);
@@ -281,6 +311,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(780, 457);
+            this.Controls.Add(this.StatusStrip);
             this.Controls.Add(this.TableLayoutMain);
             this.Font = new System.Drawing.Font("SUSE", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -299,7 +330,10 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.VerificacionUsuarioCont)).EndInit();
+            this.StatusStrip.ResumeLayout(false);
+            this.StatusStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -320,6 +354,9 @@
         private System.Windows.Forms.Label LblIcoError;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Label LblErrorUserPass;
+        private System.Windows.Forms.StatusStrip StatusStrip;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.ComponentModel.BackgroundWorker BackWorkerProgressBar;
     }
 }
 

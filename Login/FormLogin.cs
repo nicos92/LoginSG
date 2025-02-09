@@ -16,6 +16,7 @@ using Domain.Model;
 
 using Newtonsoft.Json;
 using Common.Cache;
+using System.Threading;
 
 namespace Login
 {
@@ -23,6 +24,7 @@ namespace Login
     {
         UsuarioModel usuarioModel = new UsuarioModel();
         ColoresARGB Colores = new ColoresARGB();
+        NSMessageBox.NSMessageBox mensaje = new NSMessageBox.NSMessageBox();
         public FormLogin()
         {
             InitializeComponent();
@@ -34,11 +36,10 @@ namespace Login
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            //SingletonFont cargaF = SingletonFont.GetInstancia();
 
-            SingletonFont cargaF = SingletonFont.GetInstancia();
 
-
-            ApplyFontsToControls(cargaF);
+            //ApplyFontsToControls(cargaF);
             CargarUltimoUsuario();
 
         }
@@ -66,9 +67,21 @@ namespace Login
 
         private async void BtnIniciar_Click(object sender, EventArgs e)
         {
+            if (!BackWorkerProgressBar.IsBusy)
+            {
+                BackWorkerProgressBar.RunWorkerAsync();
+
+            }
+
             GuardarUltimoUsuario();
             DesactivarControles(false);
             BtnIniciar.BackGroudColor = Colores.Secondary;
+            await IniciarSesion();
+
+        }
+
+        private async Task IniciarSesion()
+        {
             // verificar conexion timeout exception
             bool login = false;
             try
@@ -76,44 +89,73 @@ namespace Login
 
                 login = await usuarioModel.LoginUser(TxtUsuario.Text, TxtPassword.Text);
             }
+            catch (System.Net.Sockets.SocketException ex)
+            {
+                DetenerProgressBar();
+
+                mensaje.ShowDialog("Error en Base de datos", ex.Message, NSMessageBox.Iconos.Cross, NSMessageBox.Botones.Aceptar);
+
+                return;
+            }
             catch (TimeoutException ex)
             {
-                NSMessageBox.NSMessageBox mensaje = new NSMessageBox.NSMessageBox();
-                mensaje.ShowDialog("Error base de datos", "Paso demasiado tiempo para conectarse con la base de datos.\n" + ex.Message, NSMessageBox.Iconos.Cross, NSMessageBox.Botones.Aceptar);
+                DetenerProgressBar();
+
+                mensaje.ShowDialog("Error en Base de datos", "Paso demasiado tiempo para conectarse con la base de datos.\n" + ex.Message, NSMessageBox.Iconos.Cross, NSMessageBox.Botones.Aceptar);
+
                 return;
 
-            }catch(InvalidOperationException ex)
+            }
+            catch (InvalidOperationException ex)
             {
-                NSMessageBox.NSMessageBox mensaje = new NSMessageBox.NSMessageBox();
-                mensaje.ShowDialog("Error base de datos", "Ya hay una conexion abierta con laba se de datos.\n" + ex.Message, NSMessageBox.Iconos.Cross, NSMessageBox.Botones.Aceptar);
+                DetenerProgressBar();
+                mensaje.ShowDialog("Error en Base de datos", "Ya hay una conexion abierta con la base de datos.\n" + ex.Message, NSMessageBox.Iconos.Cross, NSMessageBox.Botones.Aceptar);
+
+
                 return;
             }
             finally
             {
                 TxtPassword.Text = "";
+                DesactivarControles(true);
+
                 TxtUsuario.Focus();
             }
 
+            DetenerProgressBar();
             if (login)
             {
-
-                this.Hide();
+                ErrorUserPass(false);
+                mensaje.ShowDialog("Ventana principal", "Bienvenido a la aplicacion", NSMessageBox.Iconos.Check, NSMessageBox.Botones.Aceptar);
             }
             else
             {
-                
-                LblIcoError.Visible = true;
-                LblErrorUserPass.Visible = true;
+                ErrorUserPass(true);
                 DesactivarControles(true);
 
 
 
             }
-
         }
+
+        private void DetenerProgressBar()
+        {
+            if (BackWorkerProgressBar.IsBusy)
+            {
+                BackWorkerProgressBar.CancelAsync();
+
+            }
+        }
+            
+
+        private void ErrorUserPass(bool vista)
+        {
+            LblIcoError.Visible = vista;
+            LblErrorUserPass.Visible = vista;
+        }
+
         private void DesactivarControles(bool habilitacion)
         {
-            BtnIniciar.Enabled = habilitacion;
             TxtUsuario.Enabled = habilitacion;
             TxtPassword.Enabled = habilitacion;
         }
@@ -157,6 +199,76 @@ namespace Login
         {
             EnabledBtnIniciar();
 
+        }
+
+        private async void TxtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            await EnviarIniciarSesion(e);
+        }
+        private async void TxtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            await EnviarIniciarSesion(e);
+        }
+
+        private async Task EnviarIniciarSesion(KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                if (TxtUsuario.Text != "" && TxtPassword.Text != "")
+                {
+
+                    if (!BackWorkerProgressBar.IsBusy)
+                    {
+                        BackWorkerProgressBar.RunWorkerAsync();
+                    }
+                    GuardarUltimoUsuario();
+                    DesactivarControles(false);
+                    BtnIniciar.BackGroudColor = Colores.Secondary;
+                    await IniciarSesion();
+                }
+            }
+        }
+
+       
+
+       
+
+        private void BackWorkerProgressBar_DoWork(object sender, DoWorkEventArgs e)
+        {
+            int i = 0;
+            while (toolStripProgressBar1.Value < toolStripProgressBar1.Maximum)
+            {
+                // Comprobar si se ha solicitado la cancelación
+                if (BackWorkerProgressBar.CancellationPending)
+                {
+                    e.Cancel = true;
+                    break;
+                }
+
+                // Realizar el trabajo en segundo plano
+                Thread.Sleep(100); // Simulamos una tarea que toma tiempo
+
+                // Reportar progreso
+                if (i != 99)
+                {
+
+
+                    i++;
+                    BackWorkerProgressBar.ReportProgress(i);
+                }
+            }
+        }
+
+        private void BackWorkerProgressBar_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            toolStripProgressBar1.Value = e.ProgressPercentage;
+        }
+
+        private void BackWorkerProgressBar_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            toolStripProgressBar1.Value = 0;
+
+            
         }
     }
 }

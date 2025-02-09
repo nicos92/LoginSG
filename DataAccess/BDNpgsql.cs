@@ -15,7 +15,8 @@ namespace DataAccess
         private readonly NpgsqlConnection _connection;
 
 
-        private const string Host = "192.168.0.189";
+        //private const string Host = "192.168.0.189";
+        private const string Host = "Localhost";
         private const string Port = "62354";
         private const string Username = "postgres";
         private const string Password = "athena_4116";

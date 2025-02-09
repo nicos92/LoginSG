@@ -5,3 +5,9 @@ d:\Users\n.sandoval\Documents\csharp\Login\Common\bin\Debug\NSMessageBox.pdb
 d:\Users\n.sandoval\Documents\csharp\Login\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
 d:\Users\n.sandoval\Documents\csharp\Login\Common\obj\Debug\Common.dll
 d:\Users\n.sandoval\Documents\csharp\Login\Common\obj\Debug\Common.pdb
+C:\Users\nicos92\Documents\csharp\LoginSG\Common\bin\Debug\Common.dll
+C:\Users\nicos92\Documents\csharp\LoginSG\Common\bin\Debug\Common.pdb
+C:\Users\nicos92\Documents\csharp\LoginSG\Common\bin\Debug\NSMessageBox.pdb
+C:\Users\nicos92\Documents\csharp\LoginSG\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\nicos92\Documents\csharp\LoginSG\Common\obj\Debug\Common.dll
+C:\Users\nicos92\Documents\csharp\LoginSG\Common\obj\Debug\Common.pdb
